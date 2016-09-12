@@ -22,6 +22,7 @@ def largest?(array, value)
   return true
 end
 ```
+**Snippet 1- Big O(n) because there is a linear relationship between data set growth and the increase in loop counts; every additional element in the array will increase run time proproptionally**  
 
 Snippet 2 - Big O:
 ```ruby
@@ -36,6 +37,7 @@ def info_dump(customers)
   end
 end
 ```
+**Snippet 2- Big O(n) because even though there are two loops, those loops are not nested so there is a linear relationship between increase in number of customers and run time**   
 
 Snippet 3 - Big O:
 ```ruby
@@ -43,6 +45,7 @@ def first_element_is_red?(array)
   array[0] == 'red' ? true : false
 end
 ```
+**Snippet 3- Big O(1) because adding more elements to the array won't affect the run time, there is a fixed constant run time that is not dependent on the amount of data** 
 
 Snippet 4 - Big O:
 ```ruby
@@ -56,6 +59,7 @@ def duplicates?(array)
   false
 end
 ```
+**Snippet 4 - Big 0(n^2) because there is a O(n) loop nested in a 0(n) loop; for each additional element in the array the run time will increase exponentially**
 
 Snippet 5 - Big O:
 ```ruby
@@ -68,6 +72,7 @@ words.each do |word|
   end
 end
 ```
+**Snippet 5 - Big 0(n^2) because there is a O(n) loop nested in a 0(n) loop; for each additional element in the array the run time will increase exponentially**
 
 Snippet 6 - Big O:
 ```ruby
@@ -77,6 +82,7 @@ def print_array(array)
     array.each {|num| puts num}
 end
 ```
+**Snippet 6 - Big 0(n) because there is an linear relationship between increase in array size and run time; for each element added to the array the increase in loop count is 1**
 
 Snippet 7 - Big O:
 ```ruby
@@ -91,6 +97,7 @@ Snippet 7 - Big O:
     num[i+1] = key
 end
 ```
+**Snippet 7 - Big 0(n^2) because it takes more and more time as the data set grows. For insertion sort, you find the first unsorte element and then iterate through the sorted elements to see where it should go. The worst case input is an array sorted in reverse order. In these cases every iteration of the inner loop will scan and shift the entire sorted subsection of the array before inserting the next element. This gives insertion sort a quadratic running time**
 
 Snippet 8 - Big O:
 ```ruby
@@ -103,3 +110,4 @@ n.times do |i|
   a[i], a[index_min] = a[index_min], a[i] if index_min != i
 end
 ```
+**Snippet 8 - Big 0(n^2) because because it takes more and more time as the data set grows because there are more items to check the item of interest against. My understanding is that for selection sort you iterate through the unsorted elements to find the one of interest and then iterate through the sorted elements to find out where the item of interest should go. If there are at least 2 iterations for every new item, then the relationship is quadratic.**
